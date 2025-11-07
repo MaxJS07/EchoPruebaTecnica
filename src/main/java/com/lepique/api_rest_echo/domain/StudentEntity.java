@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Getter @Setter @EqualsAndHashCode @ToString
 @Table(name = "TBSTUDENT")
@@ -29,4 +32,14 @@ public class StudentEntity {
     @ManyToOne
     @JoinColumn(name = "GRADEID", referencedColumnName = "GRADEID")
     private GradeEntity grade;
+
+    //RELATIONS WITH OTHER TABLES
+
+    //Inscriptions
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<InscriptionEntity> studentInscriptions = new ArrayList<>();
+
+    //Scores
+    @OneToMany(mappedBy = "student", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ScoreEntity> studentScores = new ArrayList<>();
 }

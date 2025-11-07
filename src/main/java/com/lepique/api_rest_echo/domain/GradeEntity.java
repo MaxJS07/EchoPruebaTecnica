@@ -29,4 +29,8 @@ public class GradeEntity {
     @OneToMany(mappedBy = "grade", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<StudentEntity> StudentsGrades = new ArrayList<>();
 
+    //Classes
+    @OneToMany(mappedBy = "grade", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ClassEntity> classesGrade = new ArrayList<>();
+
 }
