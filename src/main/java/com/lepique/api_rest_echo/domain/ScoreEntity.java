@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Entity
 @Getter @Setter @ToString @EqualsAndHashCode
-@Table(name = "TBINSCRIPTION")
+@Table(name = "TBSCORE")
 public class ScoreEntity {
 
     @Id
