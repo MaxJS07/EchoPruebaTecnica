@@ -3,7 +3,9 @@ com\lepique\api_rest_echo\repository\CourseRepository.class
 com\lepique\api_rest_echo\service\CourseService.class
 com\lepique\api_rest_echo\model\dto\ClassDTO.class
 com\lepique\api_rest_echo\repository\GradeRepository.class
+com\lepique\api_rest_echo\service\InscriptionService.class
 com\lepique\api_rest_echo\repository\InscriptionRepository.class
+com\lepique\api_rest_echo\controller\InscriptionController.class
 com\lepique\api_rest_echo\domain\CourseEntity.class
 com\lepique\api_rest_echo\repository\ClassRepository.class
 com\lepique\api_rest_echo\domain\ClassEntity.class

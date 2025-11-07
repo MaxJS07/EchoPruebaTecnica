@@ -3,6 +3,7 @@ C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\config\OpenAPIC
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\CourseController.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\GradeController.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\GreetingController.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\InscriptionController.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\StudentController.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\ClassEntity.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\CourseEntity.java
@@ -30,4 +31,5 @@ C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\repository\Teac
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\CourseService.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\GradeService.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\GreetingService.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\InscriptionService.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\StudentService.java

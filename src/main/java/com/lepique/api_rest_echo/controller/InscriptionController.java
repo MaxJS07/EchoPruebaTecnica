@@ -1,7 +1,8 @@
 package com.lepique.api_rest_echo.controller;
 
+import com.lepique.api_rest_echo.model.dto.InscriptionDTO;
 import com.lepique.api_rest_echo.model.dto.StudentDTO;
-import com.lepique.api_rest_echo.service.StudentService;
+import com.lepique.api_rest_echo.service.InscriptionService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,39 +10,43 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.context.annotation.RequestScope;
 
 import java.time.Instant;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 /**
  * En este controller se encuentran los endpoints para:
- * - 1.1 Obtener todos los estudiantes
- * - 1.1 Insertar un estudiante
- * - 1.1 Actualizar un estudiante
- * - 1.1 Eliminar un estudiante
+ * - Obtener todas las inscripciones
+ * - 2.2 | 5.1 Obtener todos los estudiantes de un curso (inscripciones por id de curso)
+ * - 2.1 Inscribir un estudiante a un curso (post)
+ * - 2.1 Desinscribir un estudiante de un curso (delete)
  */
 @RestController
-@RequestMapping("/api/students")
-public class StudentController {
+@RequestMapping("/api/inscriptions")
+public class InscriptionController {
 
-    //Inyectamos service
+    //Service
     @Autowired
-    private StudentService service;
+    private InscriptionService service;
 
     //GET METHOD
-    @GetMapping("/obtainStudents")
-    public List<StudentDTO> GetAllStudents(){
-        return service.GetAllStudents();
+    @GetMapping("/obatainInscriptions")
+    public List<InscriptionDTO> GetAllInscriptions(){
+        return service.GetAllInscriptions();
+    }
+
+    //GET BY COURSE METHOD
+    @GetMapping("/inscriptionsByCourse/{courseId}")
+    public List<InscriptionDTO> GetInscriptionsByCourse(@PathVariable Long courseId){
+        return service.GetInscriptionsByCourse(courseId);
     }
 
     //POST METHOD
-    @PostMapping("/insertStudent")
-    public ResponseEntity<Map<String, Object>> InsertStudent(
-            @Valid @RequestBody StudentDTO student,
+    @PostMapping("/insertInscription")
+    public ResponseEntity<Map<String,Object>> InsertInscription(
+            @Valid @RequestBody InscriptionDTO inscription,
             BindingResult bindingResult,
             HttpServletRequest request
     ){
@@ -58,13 +63,13 @@ public class StudentController {
         }
 
         try{
-            StudentDTO reply = service.InsertStudent(student);
+            InscriptionDTO reply = service.InsertInscription(inscription);
 
             if(reply == null){
                 return ResponseEntity.badRequest().body(Map.of(
                         "status","Wrong insert",
                         "errorType","VALIDATION_ERROR",
-                        "message","The student data is not valid"
+                        "message","The inscription data is not valid"
                 ));
             }
             else{
@@ -77,56 +82,34 @@ public class StudentController {
         catch (Exception e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(Map.of(
                     "status", "error",
-                    "message", "There was an error trying to insert the student.",
+                    "message", "There was an error trying to insert the inscription.",
                     "detail", e.getMessage()
             ));
         }
     }
 
-    //PUT METHOD
-    @PutMapping("/updateStudent/{id}")
-    public ResponseEntity<?> UpdateStudent(
-            @PathVariable Long id,
-            @Valid @RequestBody StudentDTO student,
-            BindingResult bindingResult
-    ){
-        if(bindingResult.hasErrors()){
-            Map<String, String> errors = new HashMap<>();
-            bindingResult.getFieldErrors().forEach(error -> errors.put(error.getField(), error.getDefaultMessage()));
-            return ResponseEntity.badRequest().body(errors);
-        }
-
-        try{
-            StudentDTO studentUpdated = service.UpdateStudent(id, student);
-            return ResponseEntity.ok(studentUpdated);
-        }
-        catch (Exception e){
-            return ResponseEntity.notFound().build();
-        }
-    }
-
     //DELETE METHOD
-    @DeleteMapping("/deleteStudent/{id}")
-    public ResponseEntity<?> DeleteStudent(@PathVariable Long id){
+    @DeleteMapping("/deleteInscription/{id}")
+    public ResponseEntity<?> DeleteInscription(@PathVariable Long id){
         try{
-            if(!service.DeleteStudent(id)){
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).header("X-Mensaje-Error", "Student Not Found")
+            if(!service.DeleteInscription(id)){
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).header("X-Mensaje-Error", "Inscription Not Found")
                         .body(Map.of(
                                 "error","Not found",
-                                "mensaje", "The student wasn't found",
+                                "mensaje", "The inscription wasn't found",
                                 "timestamp", Instant.now().toString()
                         ));
             }
 
             return ResponseEntity.ok().body(Map.of(
                     "status", "success",
-                    "message", "The student was deleted."
+                    "message", "The inscription was deleted."
             ));
         }
         catch (Exception e){
             return ResponseEntity.internalServerError().body(Map.of(
                     "status", "Error",
-                    "message", "There was an error trying to delete the student.",
+                    "message", "There was an error trying to delete the inscription.",
                     "detail", e.getMessage()
             ));
         }
