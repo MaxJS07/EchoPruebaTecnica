@@ -33,6 +33,13 @@ public class StudentService {
                 .collect(Collectors.toList());
     }
 
+    public List<StudentDTO> GetStudentsByGrade(Long gradeId){
+        List<StudentEntity> students = repo.studentsByGrade(gradeId);
+        return students.stream()
+                .map(this::fromEntityToDto)
+                .collect(Collectors.toList());
+    }
+
 
     /**
      * INSERTS A STUDENT IN THE DATABASE AND RETURNS THE INSERTED DATA

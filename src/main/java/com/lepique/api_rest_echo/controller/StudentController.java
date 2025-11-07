@@ -23,6 +23,7 @@ import java.util.Objects;
  * - 1.1 Insertar un estudiante
  * - 1.1 Actualizar un estudiante
  * - 1.1 Eliminar un estudiante
+ * - 5.1 Listar estudiantes por grado (get por id de grado)
  */
 @RestController
 @RequestMapping("/api/students")
@@ -36,6 +37,12 @@ public class StudentController {
     @GetMapping("/obtainStudents")
     public List<StudentDTO> GetAllStudents(){
         return service.GetAllStudents();
+    }
+
+    //GET BY GRADE METHOD
+    @GetMapping("/studentsByGrade/{gradeId}")
+    public List<StudentDTO> GetStudentsByGrade(@PathVariable Long gradeId){
+        return service.GetStudentsByGrade(gradeId);
     }
 
     //POST METHOD
