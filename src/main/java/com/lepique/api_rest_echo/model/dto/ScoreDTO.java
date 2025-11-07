@@ -1,5 +1,6 @@
 package com.lepique.api_rest_echo.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import lombok.EqualsAndHashCode;
