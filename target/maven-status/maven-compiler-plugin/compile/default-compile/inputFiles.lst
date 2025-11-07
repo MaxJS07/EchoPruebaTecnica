@@ -1,0 +1,6 @@
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\ApiRestEchoApplication.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\config\OpenAPIConfig.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\GreetingController.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\Greeting.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\repository\GreetingRepository.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\GreetingService.java
