@@ -1,6 +1,16 @@
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\ApiRestEchoApplication.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\config\OpenAPIConfig.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\CourseController.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\GradeController.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\controller\GreetingController.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\CourseEntity.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\GradeEntity.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\domain\Greeting.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\model\dto\CourseDTO.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\model\dto\GradeDTO.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\repository\CourseRepository.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\repository\GradeRepository.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\repository\GreetingRepository.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\CourseService.java
+C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\GradeService.java
 C:\Dev\EchoPruebaTecnica\src\main\java\com\lepique\api_rest_echo\service\GreetingService.java

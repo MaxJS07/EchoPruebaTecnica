@@ -1,0 +1,10 @@
+com\lepique\api_rest_echo\controller\CourseController.class
+com\lepique\api_rest_echo\repository\CourseRepository.class
+com\lepique\api_rest_echo\model\dto\CourseDTO.class
+com\lepique\api_rest_echo\service\CourseService.class
+com\lepique\api_rest_echo\model\dto\GradeDTO.class
+com\lepique\api_rest_echo\repository\GradeRepository.class
+com\lepique\api_rest_echo\domain\CourseEntity.class
+com\lepique\api_rest_echo\domain\GradeEntity.class
+com\lepique\api_rest_echo\controller\GradeController.class
+com\lepique\api_rest_echo\service\GradeService.class
