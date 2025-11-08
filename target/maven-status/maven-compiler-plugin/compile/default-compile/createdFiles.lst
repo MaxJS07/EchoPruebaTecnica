@@ -2,6 +2,7 @@ com\lepique\api_rest_echo\controller\CourseController.class
 com\lepique\api_rest_echo\repository\CourseRepository.class
 com\lepique\api_rest_echo\service\CourseService.class
 com\lepique\api_rest_echo\model\dto\ClassDTO.class
+com\lepique\api_rest_echo\controller\TeacherController.class
 com\lepique\api_rest_echo\repository\GradeRepository.class
 com\lepique\api_rest_echo\service\InscriptionService.class
 com\lepique\api_rest_echo\repository\InscriptionRepository.class
@@ -17,14 +18,17 @@ com\lepique\api_rest_echo\repository\ScoreRepository.class
 com\lepique\api_rest_echo\repository\TeacherRepository.class
 com\lepique\api_rest_echo\model\dto\CourseDTO.class
 com\lepique\api_rest_echo\model\dto\StudentDTO.class
+com\lepique\api_rest_echo\controller\ClassController.class
 com\lepique\api_rest_echo\model\dto\GradeDTO.class
 com\lepique\api_rest_echo\domain\ScoreEntity.class
 com\lepique\api_rest_echo\domain\StudentEntity.class
+com\lepique\api_rest_echo\service\TeacherService.class
 com\lepique\api_rest_echo\model\dto\ScoreDTO.class
 com\lepique\api_rest_echo\controller\StudentController.class
 com\lepique\api_rest_echo\model\dto\InscriptionDTO.class
 com\lepique\api_rest_echo\service\StudentService.class
 com\lepique\api_rest_echo\controller\ScoreController.class
+com\lepique\api_rest_echo\service\ClassService.class
 com\lepique\api_rest_echo\domain\InscriptionEntity.class
 com\lepique\api_rest_echo\service\ScoreService.class
 com\lepique\api_rest_echo\controller\GradeController.class
